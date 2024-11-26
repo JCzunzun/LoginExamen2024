@@ -3,15 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainActivity">
+    app:startDestination="@id/fragmentLogin">
 
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="edu.iesam.loginexam1eval.presentation.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/fragmentRegister2"
         android:name="edu.iesam.loginexam1eval.presentation.FragmentRegister"
         android:label="FragmentRegister" />
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="edu.iesam.loginexam1eval.presentation.FragmentLogin"
+        android:label="FragmentLogin" >
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentRegister2"
+            app:destination="@id/fragmentRegister2" />
+    </fragment>
 </navigation>
