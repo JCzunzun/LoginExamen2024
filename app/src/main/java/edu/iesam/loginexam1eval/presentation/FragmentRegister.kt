@@ -26,15 +26,14 @@ class FragmentRegister : Fragment() {
         binding.actionCreate.setOnClickListener {
             register.buildView(bindData())
         }
-
         super.onViewCreated(view, savedInstanceState)
     }
 
     fun bindData(): User {
 
-        val id = binding.usernameCreate.toString()
-        val username = binding.usernameCreate.toString()
-        val password = binding.passwordCreate.toString()
+        val id = binding.usernameCreate.text.toString()
+        val username = binding.usernameCreate.text.toString()
+        val password = binding.passwordCreate.text.toString()
         var user = User(id, username, password)
 
         return user
