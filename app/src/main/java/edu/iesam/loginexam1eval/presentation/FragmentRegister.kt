@@ -30,7 +30,6 @@ class FragmentRegister : Fragment() {
     }
 
     fun bindData(): User {
-
         val id = binding.usernameCreate.text.toString()
         val username = binding.usernameCreate.text.toString()
         val password = binding.passwordCreate.text.toString()

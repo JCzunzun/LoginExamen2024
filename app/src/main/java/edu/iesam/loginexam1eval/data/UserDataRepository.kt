@@ -14,4 +14,8 @@ class UserDataRepository(private val localDataSource: LoginXmlLocalDataSource) :
     override suspend fun getUsers(): List<User> {
         return localDataSource.findAll()
     }
+
+    override suspend fun getUser(username: String): User? {
+        return localDataSource.findById(username)
+    }
 }
