@@ -31,5 +31,11 @@
         android:text="Aceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/register"
+        android:layout_margin="16dp"
+        android:text="Registrarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
