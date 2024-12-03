@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/fragmentRegister2"
         android:name="edu.iesam.loginexam1eval.presentation.FragmentRegister"
-        android:label="FragmentRegister" />
+        android:label="FragmentRegister" >
+        <action
+            android:id="@+id/action_fragmentRegister2_to_fragmentWelcome"
+            app:destination="@id/fragmentWelcome" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentLogin"
         android:name="edu.iesam.loginexam1eval.presentation.FragmentLogin"
@@ -16,5 +20,12 @@
         <action
             android:id="@+id/action_fragmentLogin_to_fragmentRegister2"
             app:destination="@id/fragmentRegister2" />
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentWelcome"
+            app:destination="@id/fragmentWelcome" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentWelcome"
+        android:name="edu.iesam.loginexam1eval.presentation.FragmentWelcome"
+        android:label="FragmentWelcome" />
 </navigation>

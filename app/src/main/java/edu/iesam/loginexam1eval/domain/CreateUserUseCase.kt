@@ -6,10 +6,11 @@ import org.koin.core.annotation.Single
 @Single
 class CreateUserUseCase(private val userRepository: UserRepository) {
     suspend fun invoke(user: User):Boolean{
-        val users = userRepository.getUsers().contains(user)
-        if (!users){
+        val userVerified = userRepository.getUser(user.username)
+        if (userVerified == null){
             userRepository.createUser(user)
+            return true
         }
-        return users
+        return false
     }
 }
