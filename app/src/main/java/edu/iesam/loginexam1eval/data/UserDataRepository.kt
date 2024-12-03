@@ -27,4 +27,8 @@ class UserDataRepository(private val localDataSource: LoginXmlLocalDataSource) :
     override suspend fun getRememberUser(): User? {
         return localDataSource.findRemember()
     }
+
+    override suspend fun unsuscribeUser(user: User) {
+        localDataSource.unSuscribe(user)
+    }
 }

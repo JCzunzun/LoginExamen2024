@@ -33,6 +33,9 @@ class FragmentLogin:Fragment() {
         binding.action.setOnClickListener{
             bindData()
         }
+        binding.unsuscribe.setOnClickListener{
+            navigationToUnsuscribe()
+        }
         setupObservers()
     }
 
@@ -64,6 +67,9 @@ class FragmentLogin:Fragment() {
     }
     fun navigationToWelcome(){
         findNavController().navigate(FragmentLoginDirections.actionFragmentLoginToFragmentWelcome())
+    }
+    fun navigationToUnsuscribe(){
+        findNavController().navigate(FragmentLoginDirections.actionFragmentLoginToFragmentUnsuscribe())
     }
     override fun onDestroyView() {
         super.onDestroyView()

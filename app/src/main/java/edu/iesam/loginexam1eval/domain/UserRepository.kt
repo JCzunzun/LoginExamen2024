@@ -6,4 +6,5 @@ interface UserRepository {
     suspend fun getUser(username: String): User?
     suspend fun saveRememberUser(user: User)
     suspend fun getRememberUser(): User?
+    suspend fun unsuscribeUser(user: User)
 }

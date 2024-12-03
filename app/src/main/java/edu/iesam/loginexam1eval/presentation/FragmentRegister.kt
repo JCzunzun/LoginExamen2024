@@ -48,10 +48,14 @@ class FragmentRegister : Fragment() {
         val username = binding.usernameCreate.text.toString()
         val password = binding.passwordCreate.text.toString()
         var user = User(id, username, password,false)
-
         return user
     }
     fun navigation(){
         findNavController().navigate(FragmentRegisterDirections.actionFragmentRegister2ToFragmentWelcome())
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -23,9 +23,20 @@
         <action
             android:id="@+id/action_fragmentLogin_to_fragmentWelcome"
             app:destination="@id/fragmentWelcome" />
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentUnsuscribe"
+            app:destination="@id/fragmentUnsuscribe" />
     </fragment>
     <fragment
         android:id="@+id/fragmentWelcome"
         android:name="edu.iesam.loginexam1eval.presentation.FragmentWelcome"
         android:label="FragmentWelcome" />
+    <fragment
+        android:id="@+id/fragmentUnsuscribe"
+        android:name="edu.iesam.loginexam1eval.presentation.FragmentUnsuscribe"
+        android:label="FragmentUnsuscribe" >
+        <action
+            android:id="@+id/action_fragmentUnsuscribe_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
 </navigation>

@@ -61,4 +61,7 @@ class LoginXmlLocalDataSource (private val context: Context) {
     fun deleteById(movieId: String){
         sharedPref.edit().remove(movieId).commit()
     }
+    fun unSuscribe(user: User){
+        sharedPref.edit().remove(user.id).commit()
+    }
 }
