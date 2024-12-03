@@ -3,6 +3,7 @@ agp = "8.6.1"
 kotlin = "2.0.21"
 coreKtx = "1.15.0"
 junitVersion = "5.8.1"
+mockk = "1.13.13"
 testCoroutinesVersion = "1.7.2"
 appcompat = "1.7.0"
 material = "1.12.0"
@@ -22,6 +23,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 gson-serializer = { group = "com.google.code.gson", name="gson", version.ref = "gson" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 viewmodel-scope = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "viewModelScope" }
 nav-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationComponent" }
 nav-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationComponent" }

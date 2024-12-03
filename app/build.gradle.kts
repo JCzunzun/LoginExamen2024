@@ -55,7 +55,12 @@ dependencies {
     //Librerías para testing
     testImplementation(libs.junit.api)
     testRuntimeOnly(libs.junit.engine)
+    testImplementation(libs.mockk)
+    testImplementation("org.junit.jupiter:junit-jupiter:5.11.3")
     testImplementation(libs.test.coroutines)
     testImplementation(libs.test.coroutines.android)
     testImplementation(libs.junit.api)
+}
+tasks.withType<Test>{
+    useJUnitPlatform()
 }
