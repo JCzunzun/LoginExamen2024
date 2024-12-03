@@ -19,7 +19,17 @@ class LoginXmlLocalDataSource (private val context: Context) {
         editor.putString(user.id, gson.toJson(user))
         editor.apply()
     }
+    fun saveChecked(user: User) {
+        val editor = sharedPref.edit()
+        editor.putString("remember", gson.toJson(user))
+        editor.apply()
+    }
 
+    fun findRemember(): User?{
+        return sharedPref.getString("remember", null)?.let { movie ->
+            gson.fromJson(movie, User::class.java)
+        }
+    }
     fun saveAll(users: List<User>) {
         val editor = sharedPref.edit()
         users.forEach { user ->

@@ -37,12 +37,16 @@ class FragmentLogin:Fragment() {
     }
 
     fun setupObservers() {
+        loginViewModel.getRememberUser()
         val observer = Observer<LoginViewModel.UiState> { uiState ->
             if (uiState.correct == true) {
-
                 navigationToWelcome()
             }else{
                 Log.d("Login", "Usuario no encontrado")
+            }
+            uiState.userReminder?.let {
+                binding.username.setText(it.username)
+                binding.password.setText(it.password)
             }
         }
         loginViewModel.uiState.observe(viewLifecycleOwner, observer)
@@ -54,6 +58,7 @@ class FragmentLogin:Fragment() {
         val reminderIsChecked = binding.reminder.isChecked
         loginViewModel.login(username, password, reminderIsChecked)
     }
+
     fun navigationToRegister(){
         findNavController().navigate(FragmentLoginDirections.actionFragmentLoginToFragmentRegister2())
     }

@@ -8,6 +8,7 @@ import org.koin.core.annotation.Single
 @Single
 class UserDataRepository(private val localDataSource: LoginXmlLocalDataSource) : UserRepository {
     override suspend fun createUser(user: User) {
+
         localDataSource.save(user)
     }
 
@@ -17,5 +18,13 @@ class UserDataRepository(private val localDataSource: LoginXmlLocalDataSource) :
 
     override suspend fun getUser(username: String): User? {
         return localDataSource.findById(username)
+    }
+
+    override suspend fun saveRememberUser(user: User) {
+        localDataSource.saveChecked(user)
+    }
+
+    override suspend fun getRememberUser(): User? {
+        return localDataSource.findRemember()
     }
 }
