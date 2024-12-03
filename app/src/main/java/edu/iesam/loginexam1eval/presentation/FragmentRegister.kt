@@ -37,7 +37,7 @@ class FragmentRegister : Fragment() {
             if (uiState.create){
                 navigation()
             }else{
-                Log.d("Login", "Usuario no creado")
+                Log.d("@dev", "Usuario no creado")
             }
         }
         register.uiState.observe(viewLifecycleOwner, observer)

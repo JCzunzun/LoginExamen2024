@@ -42,7 +42,7 @@ class FragmentLogin:Fragment() {
 
                 navigationToWelcome()
             }else{
-                Log.d("Login", "Usuario no encontrado")
+                Log.d("@dev", "Usuario no encontrado")
             }
         }
         loginViewModel.uiState.observe(viewLifecycleOwner, observer)
