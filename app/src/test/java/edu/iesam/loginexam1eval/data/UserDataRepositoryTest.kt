@@ -34,6 +34,5 @@ class UserDataRepositoryTest{
         val result = userRepository.getUser(user.username)
 
         assertNull(result)
-
     }
 }
