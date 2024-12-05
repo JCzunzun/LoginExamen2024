@@ -20,7 +20,9 @@ android {
     buildTypes {
 
     }
-
+    buildFeatures{
+        viewBinding= true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -52,8 +54,13 @@ dependencies {
 
     //Librerías para testing
     testImplementation(libs.junit.api)
+    testImplementation("io.mockk:mockk:1.13.13")
     testRuntimeOnly(libs.junit.engine)
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
     testImplementation(libs.test.coroutines)
     testImplementation(libs.test.coroutines.android)
     testImplementation(libs.junit.api)
+}
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
