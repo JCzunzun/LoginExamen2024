@@ -5,7 +5,7 @@ import org.koin.core.annotation.Single
 @Single
 class UnsuscribeUserUseCase (private val userRepository: UserRepository)  {
 
-    suspend fun invoke(user: User) : Boolean {
+    operator suspend fun invoke(user: User) : Boolean {
         val userGet= userRepository.getUser(user.username)
         val rememberUser = userRepository.getRememberUser()
 

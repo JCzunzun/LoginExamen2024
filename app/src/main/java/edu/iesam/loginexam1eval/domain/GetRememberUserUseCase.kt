@@ -5,7 +5,7 @@ import org.koin.core.annotation.Single
 @Single
 class GetRememberUserUseCase (private val userRepository: UserRepository) {
 
-    suspend fun invoke(): User? {
+    operator suspend fun invoke(): User? {
         return userRepository.getRememberUser()
     }
 }
